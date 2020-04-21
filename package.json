@@ -1,0 +1,31 @@
+{
+  "name": "react-native-medium-clap",
+  "version": "1.0.0-alpha.0",
+  "description": "medium clap animation for react-native & react-native-web",
+  "main": "lib/commonjs/index.js",
+  "react-native": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "bob build"
+  },
+  "author": "kida007",
+  "license": "ISC",
+  "devDependencies": {
+    "@react-native-community/bob": "^0.10.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-native": "^0.62.2",
+    "react-native-svg": "^12.1.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs"
+    ]
+  }
+}
