@@ -5,6 +5,7 @@ import {
   View,
   TouchableWithoutFeedback,
   Text,
+  Platform,
 } from "react-native";
 import PropTypes from "prop-types";
 
@@ -28,6 +29,12 @@ class MediumClap extends React.Component {
       this.top = false;
     });
   };
+
+  getCircleStyles = (radius) => ({
+    borderRadius: radius,
+    width: radius * 2,
+    height: radius * 2,
+  });
 
   animate = () => {
     if (this.state.clap < 50) {
@@ -56,6 +63,8 @@ class MediumClap extends React.Component {
   };
 
   render() {
+    const { color, clapSize, countRadius, countTextStyle } = this.props;
+
     const translateY = this.animationControl.interpolate({
       inputRange: [0, 1, 2],
       outputRange: [
@@ -86,17 +95,22 @@ class MediumClap extends React.Component {
           <Animated.View
             style={[
               styles.circle,
-              { opacity, transform: [{ scale }, { translateY }] },
+              {
+                opacity,
+                transform: [{ scale }, { translateY }],
+                backgroundColor: color,
+              },
+              this.getCircleStyles(countRadius),
             ]}
           >
-            <Text tag="h5" style={styles.clapText}>
+            <Text style={[styles.countText, countTextStyle]}>
               {"+" + this.state.clap}
             </Text>
           </Animated.View>
         </View>
         <View style={styles.clapContainer}>
           <TouchableWithoutFeedback onPress={this.animate}>
-            <Clap color={this.props.color} size={this.props.size} />
+            <Clap color={color} size={clapSize} />
           </TouchableWithoutFeedback>
         </View>
       </View>
@@ -108,13 +122,18 @@ MediumClap.propTypes = {
   onClapIncrease: PropTypes.func,
   color: PropTypes.string,
   translateY: PropTypes.number,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  countRadius: PropTypes.number,
+  countTextStyle: PropTypes.object,
+  clapSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 MediumClap.defaultProps = {
   color: "#07AF6A",
-  size: 45,
-  translateY: 40,
+  clapSize: 45,
+  translateY: Platform.OS === "web" ? 20 : 40,
+  countRadius: 20,
+  countTextStyles: {},
+  onClapIncrease: () => {},
 };
 
 export default MediumClap;
