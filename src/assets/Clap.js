@@ -2,8 +2,10 @@ import React from "react";
 import Svg, { G, Path } from "react-native-svg";
 import PropTypes from "prop-types";
 
+const ORIGINAL_SIZE = 30;
+
 const Clap = ({ color, size, ...props }) => {
-  const scale = size / 30;
+  const scale = size / ORIGINAL_SIZE;
 
   return (
     <Svg width={`${size}`} height={`${size}`} {...props}>
