@@ -29,6 +29,7 @@ const ClapExample = () => {
         translateY={30}
         countRadius={15}
         countTextStyle={{ fontSize:16 }}
+        maxClapCount={45}
       />
     </View>
 
@@ -46,8 +47,10 @@ const ClapExample = () => {
 | clapSize          | number        | 45           | use this to change the size of clap icon
 | color             | string        | #07AF6A      | use this to change primary color of component
 | translateY        | number        | 20 & 40 (web)| use this to change the translation in y direction 
+| maxClapCount      | number        | 50           | use this to limit the clap count increase
 | countRadius       | number        | 20           | use this to change the size of count component/circle
 | countTextStyle    | style         | {}           | use this to apply styles to count text
+
 
 ## Author
 This library is brought to you by [Piyush Gupta ( kida007 )](https://twitter.com/kidaa007)
