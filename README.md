@@ -55,3 +55,6 @@ const ClapExample = () => {
 ## Author
 This library is brought to you by [Piyush Gupta ( kida007 )](https://twitter.com/kidaa007)
 
+## License
+MIT
+
