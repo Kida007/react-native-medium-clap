@@ -37,8 +37,8 @@ class MediumClap extends React.Component {
   });
 
   animate = () => {
-    if (this.state.clap < 50) {
-      this.props.onClapIncrease();
+    if (this.state.clap < this.props.maxClapCount) {
+      this.props.onClapIncrease(this.state.clap + 1);
       this.setState({ clap: this.state.clap + 1 });
     }
     if (this.top) {
@@ -124,6 +124,7 @@ MediumClap.propTypes = {
   translateY: PropTypes.number,
   countRadius: PropTypes.number,
   countTextStyle: PropTypes.object,
+  maxClapCount: PropTypes.number,
   clapSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
@@ -133,6 +134,7 @@ MediumClap.defaultProps = {
   translateY: Platform.OS === "web" ? 20 : 40,
   countRadius: 20,
   countTextStyles: {},
+  maxClapCount: 50,
   onClapIncrease: () => {},
 };
 
