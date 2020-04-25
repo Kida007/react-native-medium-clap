@@ -55,6 +55,9 @@ const ClapExample = () => {
 | countRadius       | number        | 20           | use this to change the size of count component/circle
 | countTextStyle    | style         | {}           | use this to apply styles to count text
 
+## Showcase
+![Demo for the component](demo/demo.gif)
+
 
 ## Author
 This library is brought to you by [Piyush Gupta ( kida007 )](https://twitter.com/kidaa007)
