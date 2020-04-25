@@ -1,6 +1,6 @@
 {
   "name": "react-native-medium-clap",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.1",
   "description": "medium clap animation for react-native & react-native-web",
   "main": "lib/commonjs/index.js",
   "react-native": "src/index.js",

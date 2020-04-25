@@ -5,7 +5,6 @@ import {
   View,
   TouchableWithoutFeedback,
   Text,
-  Platform,
 } from "react-native";
 import PropTypes from "prop-types";
 
@@ -138,7 +137,7 @@ MediumClap.propTypes = {
 MediumClap.defaultProps = {
   color: "#07AF6A",
   clapSize: 45,
-  translateY: Platform.OS === "web" ? 20 : 40,
+  translateY: 20,
   countRadius: 20,
   countTextStyles: {},
   maxClapCount: 50,

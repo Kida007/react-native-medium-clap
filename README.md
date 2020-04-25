@@ -50,7 +50,7 @@ const ClapExample = () => {
 | onClapIncrease    | function      | () => {}     | callback function on clap increase
 | clapSize          | number        | 45           | use this to change the size of clap icon
 | color             | string        | #07AF6A      | use this to change primary color of component
-| translateY        | number        | 20 & 40 (web)| use this to change the translation in y direction 
+| translateY        | number        | 20           | use this to change the translation in y direction 
 | maxClapCount      | number        | 50           | use this to limit the clap count increase
 | countRadius       | number        | 20           | use this to change the size of count component/circle
 | countTextStyle    | style         | {}           | use this to apply styles to count text
