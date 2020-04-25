@@ -62,16 +62,19 @@ class MediumClap extends React.Component {
     this.timeout = setTimeout(this.removeAnimation, 2000);
   };
 
+  calculateOutputRange = () => {
+    const { translateY, clapSize } = this.props;
+    const baseY = -1 * clapSize;
+
+    return [baseY, baseY - translateY, baseY - translateY - 10];
+  };
+
   render() {
     const { color, clapSize, countRadius, countTextStyle } = this.props;
 
     const translateY = this.animationControl.interpolate({
       inputRange: [0, 1, 2],
-      outputRange: [
-        0,
-        -1 * this.props.translateY,
-        -1 * (this.props.translateY + 10),
-      ],
+      outputRange: this.calculateOutputRange(),
     });
 
     const opacity = this.animationControl.interpolate({
@@ -85,7 +88,11 @@ class MediumClap extends React.Component {
     });
 
     const containerStyle = {
-      ...StyleSheet.absoluteFillObject,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
       alignItems: "center",
     };
 
