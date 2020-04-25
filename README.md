@@ -1,4 +1,8 @@
-<h2><div align="center">react-native-medium-clap</div></h2>
+<h2><div>react-native-medium-clap</div></h2>
+
+![NPM VERSION](https://img.shields.io/npm/v/react-native-medium-clap)
+![LICENSE](https://img.shields.io/npm/l/react-native-medium-clap)
+
 
 Highly Customizable Medium Clap Component for react-native & react-native-web.
 
